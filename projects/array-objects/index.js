@@ -9,7 +9,17 @@
  Пример:
    forEach([1, 2, 3], (el) => console.log(el))
  */
-function forEach(array, fn) {}
+/* function forEach(array, fn) {} */
+
+let array = [1, 2, 3];
+
+let fnArray = anyArray =>{
+for(let i =0; i< anyArray.length; i++){
+console.log(`Элемент ${anyArray[i]} Индекс ${i} Массив ${anyArray}`)
+ }
+}
+
+console.log(fnArray(array))
 
 /*
  Задание 2:
@@ -20,7 +30,20 @@ function forEach(array, fn) {}
  Пример:
    map([1, 2, 3], (el) => el ** 2) // [1, 4, 9]
  */
-function map(array, fn) {}
+/* function map(array, fn) {} */
+
+
+let array = [1, 2, 3];
+
+let fnArray = anyArray =>{
+let extracted = [];
+for(let i =0; i< anyArray.length; i++){
+let currentEl = anyArray[i]
+extracted.push(currentEl)
+ }
+ return extracted
+}
+console.log(fnArray(array))
 
 /*
  Задание 3:
@@ -31,7 +54,15 @@ function map(array, fn) {}
  Пример:
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
-function reduce(array, fn, initial) {}
+/* function reduce(array, fn, initial) {} */
+
+let reduceArr = (array, amount = 0) =>{
+  for(let i = 0; i< array.length; i++ ){
+  amount += array[i];
+  }
+  return amount
+  }
+  console.log(reduceArr(array));
 
 /*
  Задание 4:
@@ -41,7 +72,23 @@ function reduce(array, fn, initial) {}
  Пример:
    upperProps({ name: 'Сергей', lastName: 'Петров' }) вернет ['NAME', 'LASTNAME']
  */
-function upperProps(obj) {}
+/* function upperProps(obj) {} */
+
+let obj = { name: 'Сергей', lastName: 'Петров' };
+
+let objFn = obj =>{
+let extracted = []
+for( let key in obj){
+extracted.push(key.toUpperCase())
+}
+return extracted
+}
+
+console.log(objFn(obj))
+
+
+
+
 
 /*
  Задание 5 *:
