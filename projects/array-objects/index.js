@@ -60,7 +60,7 @@ console.log(fnArray(array))
 /* function reduce(array, fn, initial) {} */
 
 function reduceArr(array, fn, initial){
-  let hasInitial = typeof initial !== "undefined" //// проверяем на пустоту.
+  let hasInitial = typeof initial !== "undefined" //// проверяем на пустоту..
   let prev = hasInitial ? initial : array[0];
   for(let i = hasInitial ? 0 : 1; i < array.length; i++){
     prev = fn(prev, array[i], i, array)
