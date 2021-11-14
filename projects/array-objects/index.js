@@ -11,15 +11,16 @@
  */
 /* function forEach(array, fn) {} */
 
-let array = [1, 2, 3];
+let arr = [1, 2, 3];
 
-let fnArray = anyArray =>{
-for(let i =0; i< anyArray.length; i++){
-console.log(`Элемент ${anyArray[i]} Индекс ${i} Массив ${anyArray}`)
+function arrFn (array) {
+ for(let i = 0; i < array.length; i++){
+ let el = array[i];
+ let index = i;
+ let arr = array;
  }
 }
 
-console.log(fnArray(array))
 
 /*
  Задание 2:
@@ -39,7 +40,9 @@ let fnArray = anyArray =>{
 let extracted = [];
 for(let i =0; i< anyArray.length; i++){
 let currentEl = anyArray[i]
-extracted.push(currentEl)
+let currentIndex = i;
+let currentArr = anyArray;
+extracted.push(currentEl, currentIndex, currentArr)
  }
  return extracted
 }
@@ -56,13 +59,14 @@ console.log(fnArray(array))
  */
 /* function reduce(array, fn, initial) {} */
 
-let reduceArr = (array, amount = 0) =>{
-  for(let i = 0; i< array.length; i++ ){
-  amount += array[i];
+function reduceArr(array, fn, initial){
+  let hasInitial = typeof initial !== "undefined" //// проверяем на пустоту 
+  let prev = hasInitial ? initial : array[0];
+  for(let i = hasInitial ? 0 : 1; i < array.length; i++){
+    prev = fn(prev, array[i], i, array)
   }
-  return amount
-  }
-  console.log(reduceArr(array));
+  return prev
+}
 
 /*
  Задание 4:
@@ -85,7 +89,6 @@ return extracted
 }
 
 console.log(objFn(obj))
-
 
 
 
