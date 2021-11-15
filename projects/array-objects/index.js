@@ -9,17 +9,13 @@
  Пример:
    forEach([1, 2, 3], (el) => console.log(el))
  */
-/* function forEach(array, fn) {} */
-
-let arr = [1, 2, 3];
-
-function arrFn (array) {
- for(let i = 0; i < array.length; i++){
- let el = array[i];
- let index = i;
- let arr = array;
- }
+function forEach(array, fn) {
+  for(let i = 0; i < array.length; i++){
+    fn(array[i], i, array)
+  }
 }
+
+
 
 
 /*
@@ -31,22 +27,16 @@ function arrFn (array) {
  Пример:
    map([1, 2, 3], (el) => el ** 2) // [1, 4, 9]
  */
-/* function map(array, fn) {} */
-
-
-let array = [1, 2, 3];
-
-let fnArray = anyArray =>{
-let extracted = [];
-for(let i =0; i< anyArray.length; i++){
-let currentEl = anyArray[i]
-let currentIndex = i;
-let currentArr = anyArray;
-extracted.push(currentEl, currentIndex, currentArr)
- }
- return extracted
+function map(array, fn) {
+  let extracted = [];
+  for(let i = 0; i < array.length; i++){
+    extracted[i] = fn(array[i], i, array)
+  }
+  return extracted
 }
-console.log(fnArray(array))
+
+
+
 
 /*
  Задание 3:
@@ -57,10 +47,9 @@ console.log(fnArray(array))
  Пример:
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
-/* function reduce(array, fn, initial) {} */
 
-function reduceArr(array, fn, initial){
-  let hasInitial = typeof initial !== "undefined" //// проверяем на пустоту..
+function reduce(array, fn, initial){
+  let hasInitial = typeof initial !== "undefined" //// проверяем на пустоту../
   let prev = hasInitial ? initial : array[0];
   for(let i = hasInitial ? 0 : 1; i < array.length; i++){
     prev = fn(prev, array[i], i, array)
@@ -76,22 +65,13 @@ function reduceArr(array, fn, initial){
  Пример:
    upperProps({ name: 'Сергей', lastName: 'Петров' }) вернет ['NAME', 'LASTNAME']
  */
-/* function upperProps(obj) {} */
-
-let obj = { name: 'Сергей', lastName: 'Петров' };
-
-let objFn = obj =>{
-let extracted = []
-for( let key in obj){
-extracted.push(key.toUpperCase())
-}
-return extracted
-}
-
-console.log(objFn(obj))
-
-
-
+ function upperProps(obj) { 
+   let extracted = [];
+   for(let key in obj){
+     extracted.push(key.toUpperCase())
+   }
+   return extracted
+ }
 
 /*
  Задание 5 *:
