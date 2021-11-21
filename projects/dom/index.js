@@ -26,7 +26,7 @@ function createDivWithText(text) {
  */
 function prepend(what, where) {
   let prependFn = where.prepend(what);
-  return prependFn;
+  
 }
 
 /*
