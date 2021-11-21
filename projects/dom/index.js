@@ -127,7 +127,7 @@ function deleteTextNodesRecursive(where) {
     }
   }
 }
-
+///
 /*
  Задание 7 *:
 
