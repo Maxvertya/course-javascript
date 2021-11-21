@@ -102,7 +102,7 @@ function deleteTextNodes(where) {
   for(let el of where.childNodes){
     if(el.nodeType === 3){
       where.childNodes.removeChild(el)
-    }
+    } 
   }
 }
 
@@ -117,7 +117,16 @@ function deleteTextNodes(where) {
    После выполнения функции, дерево <span> <div> <b>привет</b> </div> <p>loftchool</p> !!!</span>
    должно быть преобразовано в <span><div><b></b></div><p></p></span>
  */
-function deleteTextNodesRecursive(where) {}
+
+function deleteTextNodesRecursive(where) {
+  for(let el of where.childNodes){
+    if(el.nodeType === 3){
+      where.childNodes.removeChild(el)
+    } else if(el.nideType === 1){
+      deleteTextNodes(el);
+    }
+  }
+}
 
 /*
  Задание 7 *:
