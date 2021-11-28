@@ -72,7 +72,7 @@ function reduce(array, fn, initial){
    }
    return extracted
  }
-
+llll
 /*
  Задание 5 *:
 
